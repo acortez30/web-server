@@ -1,9 +1,11 @@
 import { dirname } from 'path';
 import { fileURLToPath } from 'url'; // 👈 ¡Esta es la que falta!
+import dotenv from 'dotenv';
+dotenv.config(); // 👈 Muy importante para que cargue las variables .env
 import hbs from 'hbs' 
 import express from 'express';
 const app = express();
-const port = 8080;
+const port = process.env.PORT;  // para desplegar no se sabe en donde se tiene que correr
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 //HANDLE BARS
